@@ -1,44 +1,53 @@
 # Q-Learning Trading Agent
 
-Ce dépôt contient une implémentation d'un **agent de trading basé sur Q-learning**.  
-L'agent est entraîné sur des données historiques de la **Bank of America (BAC)** et testé sur des données de **General Electric (GE)**.  
-L'objectif est d'apprendre une politique (suite d'actions) qui maximise la valeur finale du portefeuille en simulant des opérations d'achat et de vente sur des données journalières.
+Ce projet est une démonstration simple d'un agent de trading utilisant l'apprentissage par renforcement (Q-learning) pour apprendre une stratégie de trading.  
+L'agent est entraîné sur des données historiques de la Bank of America et testé sur des données de General Electric.
 
-## Table des matières
+## Présentation du Projet
 
-- [Description](#description)
-- [Dépendances](#dépendances)
-- [Utilisation](#utilisation)
-- [Structure du code](#structure-du-code)
-- [Explication de l'algorithme](#explication-de-lalgorithme)
-  - [Fonctions clés](#fonctions-clés)
-  - [La signification de Q(s,a)](#la-signification-de-qs-a)
-  - [Choix des hyperparamètres](#choix-des-hyperparamètres)
-- [Visualisation](#visualisation)
-- [Auteurs et Licence](#auteurs-et-licence)
+L'objectif est de maximiser la valeur finale d'un portefeuille en simulant des opérations d'achat et de vente d'actions sur une période donnée.  
+Le programme lit deux fichiers CSV contenant les prix journaliers :
+- **bank_of_america.csv** : utilisé pour entraîner l'agent.
+- **ge.csv** : utilisé pour tester la stratégie apprise.
 
-## Description
+## Comment c'est Fait ?
 
-Ce projet implémente un algorithme de Q-learning pour le trading d'actions.  
-L'agent est entraîné sur des données historiques de la **Bank of America (BAC)** et testé sur des données de **General Electric (GE)**.
+- **Langage** : Python  
+- **Dépendances** :  
+  - NumPy  
+  - Pandas  
+  - Matplotlib  
+- **Structure du Code** :  
+  Le script `lab2.py` se charge de :
+  - Lire et préparer les données.
+  - Entraîner l'agent sur les données de la Bank of America.
+  - Appliquer la stratégie sur les données de General Electric.
+  - Afficher les résultats et générer des graphiques illustrant :
+    - Les actions prises (achat, vente, ou maintien).
+    - L'évolution du portefeuille.
+    - L'évolution des prix avec les signaux d'achat et de vente.
 
-L'agent peut prendre trois actions :
-- **Hold (0)** : ne rien faire.
-- **Buy (1)** : acheter 10 actions.
-- **Sell (2)** : vendre 10 actions.
+## Résultats
 
-La récompense est définie comme la variation quotidienne de la valeur du portefeuille.  
-Le but est de maximiser cette valeur finale en apprenant la meilleure séquence d'actions à partir des états observés.
+Lors de l'exécution, le programme :
+- Affiche la valeur finale du portefeuille obtenue sur les données d'entraînement et de test.
+- Génère plusieurs graphiques permettant de visualiser :
+  - La série des actions prises par l'agent.
+  - La progression de la valeur du portefeuille au fil du temps.
+  - Les points d'achat et de vente superposés sur l'évolution des prix.
 
-## Dépendances
+Ces résultats offrent une vue d'ensemble sur l'efficacité de la stratégie apprise par l'agent et permettent de mieux comprendre son comportement dans un environnement de trading simulé.
 
-Pour exécuter ce projet, vous devez avoir installé :
-- Python 3.x
-- [NumPy](https://numpy.org/)
-- [Pandas](https://pandas.pydata.org/)
-- [Matplotlib](https://matplotlib.org/)
+## Utilisation
 
-Vous pouvez installer ces dépendances via pip :
+Pour exécuter ce projet :
 
-```bash
-pip install numpy pandas matplotlib
+1. Placez les fichiers `bank_of_america.csv` et `ge.csv` dans le même dossier que le script `lab2.py`.
+2. Installez les dépendances si ce n'est pas déjà fait :
+
+   ```bash
+   pip install numpy pandas matplotlib
+3. Lancez le script :
+
+   ```bash
+   pip install numpy pandas matplotlib
