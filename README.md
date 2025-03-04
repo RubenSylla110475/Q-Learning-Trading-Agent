@@ -51,3 +51,6 @@ Pour exécuter ce projet :
 
    ```bash
    python lab2.py
+
+
+![alt text](https://github.com/RubenSylla110475/Q-Learning-Trading-Agent/blob/main/img_QLearning/Results.png)
