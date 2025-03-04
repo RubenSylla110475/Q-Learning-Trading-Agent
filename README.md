@@ -50,4 +50,4 @@ Pour exécuter ce projet :
 3. Lancez le script :
 
    ```bash
-   pip install numpy pandas matplotlib
+   python lab2.py
